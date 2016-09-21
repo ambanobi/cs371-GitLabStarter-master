@@ -25,8 +25,7 @@ import java.util.ArrayList;
 
 public class TextModActivity extends ActionBarActivity implements View.OnClickListener {
 
-    Button clear;
-    Button lower;
+
 
     // array-list that contains our images to display
     private ArrayList<Bitmap> images;
@@ -38,6 +37,8 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
     Button copy;
     EditText text;
     Spinner spinner;
+    Button clear;
+    Button lower;
 
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
@@ -173,7 +174,7 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
             text.setText(text.getText().toString().toLowerCase());
         }
     }
-}
+
     private class reverseString implements View.OnClickListener {
         public void onClick(View v){
             text.setText(new StringBuilder(text.getText()).reverse().toString());
@@ -181,5 +182,7 @@ public class TextModActivity extends ActionBarActivity implements View.OnClickLi
 
     }
 }
+
+
 
 
