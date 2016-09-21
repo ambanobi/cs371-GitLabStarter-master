@@ -21,11 +21,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import java.util.ArrayList;
-import java.util.Collections;
 
-public class TextModActivity extends ActionBarActivity {
-    Button reverse;
-    EditText text;
+
+public class TextModActivity extends ActionBarActivity implements View.OnClickListener {
 
     // array-list that contains our images to display
     private ArrayList<Bitmap> images;
@@ -33,13 +31,16 @@ public class TextModActivity extends ActionBarActivity {
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
 
+    Button reverse;
+    Button copy;
+    EditText text;
+    Spinner spinner;
+
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
 
         // perform superclass initialization; load the layout
         super.onCreate(savedInstanceState);
@@ -50,13 +51,17 @@ public class TextModActivity extends ActionBarActivity {
         reverse.setOnClickListener(new reverseString());
         text = (EditText) findViewById(R.id.editText);
 
+        copy = (Button)findViewById(R.id.button2);
+        copy.setOnClickListener(this);
+        text = (EditText)findViewById(R.id.editText);
+
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
 
         // Set up the spinner so that it shows the names in the spinner array resources
         //
         // get spinner object
-        Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        spinner = (Spinner)findViewById(R.id.spinner);
         // get array of strings
         String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
         // create adapter with the strings
@@ -86,9 +91,12 @@ public class TextModActivity extends ActionBarActivity {
         spinner.setOnItemSelectedListener(new MySpinnerListener());
 
 
-
     }
+    public void onClick(View v){
 
+        Object v2 = spinner.getSelectedItem();
+        text.setText(text.getText()+v2.toString());
+    }
 
     /**
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
