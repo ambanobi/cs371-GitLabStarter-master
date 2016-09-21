@@ -51,7 +51,6 @@ public class TextModActivity extends ActionBarActivity {
         upper = (Button) findViewById(R.id.button6);
         upper.setOnClickListener(new UppercaseListerner());
 
-
         // Set up the spinner so that it shows the names in the spinner array resources
         //
         // get spinner object
