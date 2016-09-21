@@ -16,11 +16,17 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import java.util.ArrayList;
 
 public class TextModActivity extends ActionBarActivity {
+
+    Button clear;
+    Button lower;
+    EditText text;
 
     // array-list that contains our images to display
     private ArrayList<Bitmap> images;
@@ -73,6 +79,13 @@ public class TextModActivity extends ActionBarActivity {
         // define a listener for the spinner
         spinner.setOnItemSelectedListener(new MySpinnerListener());
 
+        clear = (Button) findViewById(R.id.button);
+        clear.setOnClickListener(new ClearString());
+
+        text = (EditText) findViewById(R.id.editText);
+
+        lower = (Button) findViewById(R.id.button7);
+        lower.setOnClickListener(new LowerCase());
     }
 
     /**
@@ -126,6 +139,18 @@ public class TextModActivity extends ActionBarActivity {
         @Override
         public void onNothingSelected(AdapterView<?> parentView) {
             // your code here
+        }
+    }
+
+    private class ClearString implements View.OnClickListener {
+        public void onClick(View v) {
+            text.setText("");
+        }
+    }
+
+    private class LowerCase implements View.OnClickListener {
+        public void onClick(View v) {
+            text.setText(text.getText().toString().toLowerCase());
         }
     }
 }
