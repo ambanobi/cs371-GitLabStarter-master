@@ -16,11 +16,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import java.util.ArrayList;
 
 public class TextModActivity extends ActionBarActivity {
+
+    private Button upper;
+    private EditText text;
 
     // array-list that contains our images to display
     private ArrayList<Bitmap> images;
@@ -40,6 +45,12 @@ public class TextModActivity extends ActionBarActivity {
 
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
+
+        text = (EditText) findViewById(R.id.editText);
+
+        upper = (Button) findViewById(R.id.button6);
+        upper.setOnClickListener(new UppercaseListerner());
+
 
         // Set up the spinner so that it shows the names in the spinner array resources
         //
@@ -126,6 +137,13 @@ public class TextModActivity extends ActionBarActivity {
         @Override
         public void onNothingSelected(AdapterView<?> parentView) {
             // your code here
+        }
+    }
+
+    private class UppercaseListerner implements View.OnClickListener {
+        public void onClick(View v) {
+            text.setText(text.getText().toString().toUpperCase());
+
         }
     }
 }

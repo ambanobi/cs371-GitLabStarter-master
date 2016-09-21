@@ -38,7 +38,8 @@
             android:layout_weight="1"
             android:textSize="@dimen/edittext_font_size"
             android:singleLine="true"
-            android:text="@string/initial_text" />
+            android:text="@string/initial_text"
+            android:editable="false" />
 
         <Space
             android:layout_width="0sp"
@@ -83,7 +84,9 @@
             android:id="@+id/button6"
             android:textSize="@dimen/button_font_size"
             android:textColor="@color/button_text_color"
-            android:background="@color/button_color" />
+            android:background="@color/button_color"
+            android:clickable="true"
+            android:onClick="UppercaseListener();" />
 
         <Space
             android:layout_width="0sp"
