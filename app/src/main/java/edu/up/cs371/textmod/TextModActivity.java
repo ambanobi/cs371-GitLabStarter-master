@@ -16,11 +16,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class TextModActivity extends ActionBarActivity {
+    Button reverse;
+    EditText text;
 
     // array-list that contains our images to display
     private ArrayList<Bitmap> images;
@@ -34,9 +39,16 @@ public class TextModActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
+
         // perform superclass initialization; load the layout
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_text_mod);
+
+
+        reverse = (Button)findViewById(R.id.button4);
+        reverse.setOnClickListener(new reverseString());
+        text = (EditText) findViewById(R.id.editText);
 
         // set instance variables for our widgets
         imageView = (ImageView)findViewById(R.id.imageView);
@@ -73,7 +85,10 @@ public class TextModActivity extends ActionBarActivity {
         // define a listener for the spinner
         spinner.setOnItemSelectedListener(new MySpinnerListener());
 
+
+
     }
+
 
     /**
      * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
@@ -128,4 +143,12 @@ public class TextModActivity extends ActionBarActivity {
             // your code here
         }
     }
+    private class reverseString implements View.OnClickListener {
+        public void onClick(View v){
+            text.setText(new StringBuilder(text.getText()).reverse().toString());
+        }
+
+    }
 }
+
+
