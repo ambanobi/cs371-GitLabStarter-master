@@ -9,6 +9,8 @@
         <item>@mipmap/kitten</item>
         <item>@mipmap/nuxoll</item>
         <item>@mipmap/vegdahl</item>
+        <item>@mipmap/michelle</item>
+        <item>@mipmap/david</item>
         <item>@mipmap/aaron_pic</item>
     </array>
 
@@ -16,6 +18,8 @@
         <item>Sleeping Kitten</item>
         <item>Dr. Andrew Nuxoll</item>
         <item>Dr. Steven Vegdahl</item>
+        <item>Michelle</item>
+        <item>David Vandewark</item>
         <item>Aaron Banobi</item>
     </string-array>
 
