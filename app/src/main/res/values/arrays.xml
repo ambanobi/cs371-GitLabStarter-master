@@ -12,6 +12,7 @@
         <item>@mipmap/michelle</item>
         <item>@mipmap/david</item>
         <item>@mipmap/aaron_pic</item>
+        <item>@mipmap/nick</item>
     </array>
 
     <string-array name="spinner_names">
@@ -21,6 +22,7 @@
         <item>Michelle</item>
         <item>David Vandewark</item>
         <item>Aaron Banobi</item>
+        <item>Nick</item>
     </string-array>
 
 </resources>
